@@ -1,0 +1,1 @@
+Add your MP4 videos here, then fill the data-video, data-bottle, and data-wiping attributes in index.html. Suggested filenames are listed in README.md.
