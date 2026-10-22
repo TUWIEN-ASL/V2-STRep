@@ -1,1 +1,0 @@
-Add paper.pdf and supplementary.pdf here, then update the resource-button href values in index.html.
