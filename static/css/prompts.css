@@ -1,0 +1,156 @@
+/* All styles are scoped to the new VLM Prompts section. */
+#prompts [hidden] { display: none !important; }
+
+#prompts .prompt-viewer {
+  border: 1px solid #dce4e6;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+#prompts .prompt-tabs {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid #dce4e6;
+  background: #fff;
+}
+
+#prompts .prompt-tab {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 17px 14px 14px;
+  margin: 0;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: #53616b;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: center;
+  cursor: pointer;
+}
+
+#prompts .prompt-tab:hover { background: #f4f8f8; }
+#prompts .prompt-tab[aria-selected="true"] {
+  color: #176c73;
+  border-bottom-color: #176c73;
+  background: #f0f7f7;
+}
+
+#prompts .prompt-panel { min-width: 0; }
+#prompts .prompt-panel + .prompt-panel { border-top: 1px solid #dce4e6; }
+#prompts.is-enhanced .prompt-panel { border-top: 0; }
+
+#prompts .prompt-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  padding: 16px 22px;
+  border-bottom: 1px solid #e7ecee;
+}
+
+#prompts .prompt-filename {
+  margin: 0;
+  color: #5c6872;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+#prompts .prompt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+#prompts .prompt-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 38px;
+  padding: 7px 12px;
+  border: 1px solid #d7e1e3;
+  border-radius: 6px;
+  background: #fff;
+  color: #34565b;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+#prompts .prompt-action:hover {
+  border-color: #176c73;
+  background: #f0f7f7;
+  color: #176c73;
+}
+#prompts .prompt-action:disabled { opacity: 0.6; cursor: wait; }
+
+#prompts .prompt-tab:focus-visible,
+#prompts .prompt-action:focus-visible,
+#prompts .prompt-text:focus-visible {
+  outline: 2px solid #176c73;
+  outline-offset: -3px;
+}
+
+#prompts .prompt-text {
+  box-sizing: border-box;
+  max-height: 420px;
+  margin: 0;
+  padding: 24px;
+  overflow: auto;
+  background: #f8fafb;
+  color: #293a43;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.75;
+  text-align: left;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  tab-size: 2;
+}
+
+#prompts .prompt-text.is-expanded { max-height: none; }
+#prompts .prompt-status {
+  min-height: 1.5em;
+  margin: 10px 0 0;
+  color: #46666b;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  #prompts .prompt-tab {
+    padding: 13px 6px 10px;
+    font-size: 12px;
+  }
+  #prompts .prompt-toolbar { padding: 12px; gap: 10px; }
+  #prompts .prompt-actions { gap: 6px; }
+  #prompts .prompt-action { padding: 8px 10px; min-height: 40px; }
+  #prompts .prompt-text { max-height: 360px; padding: 16px; font-size: 12px; }
+  #prompts .prompt-text.is-expanded { max-height: none; }
+}
+
+@media print {
+  #prompts .prompt-tabs,
+  #prompts .prompt-actions,
+  #prompts .prompt-status { display: none !important; }
+  #prompts .prompt-panel[hidden] { display: block !important; }
+  #prompts .prompt-text { max-height: none; overflow: visible; }
+}
